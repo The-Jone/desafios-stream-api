@@ -1,0 +1,18 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+public class Desafio6 {
+    public static void main(String[] args) {
+        List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 14, 3);
+
+        Predicate<Integer> maiorIgualA10 = numero -> numero >= 10;
+
+        List<Integer> numerosMaiores = numeros.stream()
+            .filter(maiorIgualA10)
+            .collect(Collectors.toList());
+
+        numerosMaiores.forEach(System.out::println);
+    }
+}
